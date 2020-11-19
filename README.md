@@ -1,4 +1,6 @@
 # Match history for Falcon AI
 
-## yarn install
-## yarn serve
+To install node modules
+#### yarn install
+To run the project
+#### yarn serve
