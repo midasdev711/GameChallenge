@@ -17,6 +17,7 @@ export default {
 .spell-group
   flex-wrap: wrap
   width: fit-content
+  min-width: 67px
   height: 43px
   flex-direction: column
   img + img 

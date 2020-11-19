@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="d-flex align-center">
+    <div class="d-flex align-center ml-auto mr-8">
       <DropdownButton />
     </div>
   </div>

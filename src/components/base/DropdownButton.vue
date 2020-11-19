@@ -16,8 +16,9 @@
         <v-list-item
           v-for="(item, index) in items"
           :key="index"
+          :class="'item' + index"
         >
-          <v-list-item-title>{{ item.title.toUpperCase() }}</v-list-item-title>
+          <v-list-item-title>{{ item.title.toUpperCase() }}<img v-if="index == 0" class="up-img" src="@/assets/icons/chevron-up.svg"></v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -52,4 +53,27 @@ export default {
   background: #002C9F
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5)
   border-radius: 0
+.v-menu__content
+  border-radius: 0
+.v-list
+  height: 136px
+  padding: 0
+  border-radius: 0
+  .v-list-item
+    min-height: 34px
+    background: #404245
+    font-size: 12px
+    line-height: 14px
+    text-align: center
+    .v-list-item__title
+      color: #FFFFFF!important
+      font-weight: bold
+      position: relative
+      .up-img
+        position: absolute
+        top: 4px
+        right: 0px
+    &.item3, &.item2
+      background: #002C9F
+
 </style>

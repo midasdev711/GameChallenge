@@ -10,21 +10,16 @@
     </v-row>
     <v-row>
       <v-col cols="12" xs="12">
-        <StatusCard type="victory"/>
-        <Avatar imageUrl="character1.png" type="rounded" :size="54" borderColor="blue" />
+        <MatchHistory />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-
-import axios from 'axios';
 import { mapActions, mapGetters } from "vuex";
-import moment from "moment";
-import StatusCard from "@/components/base/StatusCard";
 import MatchDetail from "@/components/MatchDetail";
-import Avatar from "@/components/base/Avatar";
+import MatchHistory from "@/components/MatchHistory";
 
 export default {
   name: "Index",
@@ -34,20 +29,16 @@ export default {
   },
 
   components: {
-    StatusCard,
     MatchDetail,
-    Avatar
+    MatchHistory,
   },
 
-  computed: {},
-
   methods: {
-    ...mapActions("app", {
-    }),
-
+    ...mapActions("app", ['getMatchHistory']),
   },
 
   async mounted() {
+    this.getMatchHistory();
   }
 };
 </script>

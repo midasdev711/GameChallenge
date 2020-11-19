@@ -1,0 +1,1076 @@
+{
+  "analysis": [
+    {
+      "assists": 11,
+      "build": [1402, 3100, 3152, 3020, 3165, 0, 3364],
+      "championId": 28,
+      "cs": 106,
+      "deaths": 11,
+      "gameCreation": "2019-09-13T17:11:36+03:00",
+      "gameDuration": 2199,
+      "kda": 2,
+      "killParticipation": 51,
+      "kills": 11,
+      "roleId": 3,
+      "runes": {
+        "primaryPath": 8100,
+        "subPath": 8000
+      },
+      "spell1Id": 11,
+      "spell2Id": 4,
+      "summonerName": "BuzzLlama",
+      "teamSummary": [
+        {
+          "championId": 518,
+          "roleId": 4,
+          "summonerName": "Yoshiane",
+          "teamId": 100
+        },
+        {
+          "championId": 28,
+          "roleId": 3,
+          "summonerName": "Desolarus",
+          "teamId": 100
+        },
+        {
+          "championId": 10,
+          "roleId": 2,
+          "summonerName": "HF Yuno",
+          "teamId": 100
+        },
+        {
+          "championId": 81,
+          "roleId": 1,
+          "summonerName": "Tarky",
+          "teamId": 100
+        },
+        {
+          "championId": 53,
+          "roleId": 0,
+          "summonerName": "ardakyrozgr",
+          "teamId": 100
+        },
+        {
+          "championId": 246,
+          "roleId": 4,
+          "summonerName": "Fric",
+          "teamId": 200
+        },
+        {
+          "championId": 75,
+          "roleId": 3,
+          "summonerName": "LaRuSs",
+          "teamId": 200
+        },
+        {
+          "championId": 8,
+          "roleId": 2,
+          "summonerName": "ZjeIympth ",
+          "teamId": 200
+        },
+        {
+          "championId": 29,
+          "roleId": 1,
+          "summonerName": "SheHasBF GO NEXT",
+          "teamId": 200
+        },
+        {
+          "championId": 25,
+          "roleId": 0,
+          "summonerName": "ÊnesÂbi",
+          "teamId": 200
+        }
+      ],
+      "win": false
+    }
+  ],
+  "matches": [
+    {
+      "count": 250,
+      "filterStatistics": {
+        "championId": [
+          {
+            "count": 1,
+            "value": 1
+          },
+          {
+            "count": 1,
+            "value": 13
+          },
+          {
+            "count": 5,
+            "value": 15
+          },
+          {
+            "count": 1,
+            "value": 16
+          },
+          {
+            "count": 1,
+            "value": 20
+          },
+          {
+            "count": 12,
+            "value": 22
+          },
+          {
+            "count": 4,
+            "value": 28
+          },
+          {
+            "count": 39,
+            "value": 29
+          },
+          {
+            "count": 1,
+            "value": 37
+          },
+          {
+            "count": 2,
+            "value": 38
+          },
+          {
+            "count": 2,
+            "value": 51
+          },
+          {
+            "count": 1,
+            "value": 68
+          },
+          {
+            "count": 1,
+            "value": 86
+          },
+          {
+            "count": 3,
+            "value": 96
+          },
+          {
+            "count": 2,
+            "value": 104
+          },
+          {
+            "count": 13,
+            "value": 112
+          },
+          {
+            "count": 4,
+            "value": 120
+          },
+          {
+            "count": 5,
+            "value": 145
+          },
+          {
+            "count": 34,
+            "value": 202
+          },
+          {
+            "count": 25,
+            "value": 236
+          },
+          {
+            "count": 4,
+            "value": 498
+          }
+        ],
+        "queueId": [
+          {
+            "count": 4,
+            "value": 400
+          },
+          {
+            "count": 96,
+            "value": 420
+          },
+          {
+            "count": 2,
+            "value": 430
+          },
+          {
+            "count": 59,
+            "value": 440
+          }
+        ],
+        "roleId": [
+          {
+            "count": 4,
+            "value": 0
+          },
+          {
+            "count": 121,
+            "value": 1
+          },
+          {
+            "count": 7,
+            "value": 2
+          },
+          {
+            "count": 18,
+            "value": 3
+          },
+          {
+            "count": 8,
+            "value": 4
+          },
+          {
+            "count": 3,
+            "value": null
+          }
+        ],
+        "seasonId": [
+          {
+            "count": 20,
+            "value": 12
+          },
+          {
+            "count": 141,
+            "value": 13
+          }
+        ]
+      },
+      "results": [
+        {
+          "assists": 11,
+          "build": [1402, 3100, 3152, 3020, 3165, 0, 3364],
+          "champLevel": 14,
+          "championId": 28,
+          "cs": 106,
+          "deaths": 11,
+          "gameCreation": "2019-09-13T17:11:36+03:00",
+          "gameDuration": 2199,
+          "kda": 2,
+          "killParticipation": 51,
+          "kills": 11,
+          "queueId": 440,
+          "roleId": 3,
+          "runes": {
+            "primaryPath": 8100,
+            "subPath": 8000
+          },
+          "spell1Id": 11,
+          "spell2Id": 4,
+          "teamSummary": [
+            {
+              "championId": 518,
+              "roleId": 4,
+              "summonerName": "Yoshiane",
+              "teamId": 100
+            },
+            {
+              "championId": 28,
+              "roleId": 3,
+              "summonerName": "Desolarus",
+              "teamId": 100
+            },
+            {
+              "championId": 10,
+              "roleId": 2,
+              "summonerName": "HF Yuno",
+              "teamId": 100
+            },
+            {
+              "championId": 81,
+              "roleId": 1,
+              "summonerName": "Tarky",
+              "teamId": 100
+            },
+            {
+              "championId": 53,
+              "roleId": 0,
+              "summonerName": "ardakyrozgr",
+              "teamId": 100
+            },
+            {
+              "championId": 246,
+              "roleId": 4,
+              "summonerName": "Fric",
+              "teamId": 200
+            },
+            {
+              "championId": 75,
+              "roleId": 3,
+              "summonerName": "LaRuSs",
+              "teamId": 200
+            },
+            {
+              "championId": 8,
+              "roleId": 2,
+              "summonerName": "ZjeIympth ",
+              "teamId": 200
+            },
+            {
+              "championId": 29,
+              "roleId": 1,
+              "summonerName": "SheHasBF GO NEXT",
+              "teamId": 200
+            },
+            {
+              "championId": 25,
+              "roleId": 0,
+              "summonerName": "ÊnesÂbi",
+              "teamId": 200
+            }
+          ],
+          "win": false
+        },
+        {
+          "assists": 10,
+          "build": [3031, 3085, 3133, 1037, 3006, 1018, 3340],
+          "champLevel": 16,
+          "championId": 22,
+          "cs": 178,
+          "deaths": 3,
+          "gameCreation": "2019-06-01T13:22:24+03:00",
+          "gameDuration": 1679,
+          "kda": 4.67,
+          "killParticipation": 47,
+          "kills": 4,
+          "queueId": 420,
+          "roleId": 1,
+          "runes": {
+            "primaryPath": 8000,
+            "subPath": 8300
+          },
+          "spell1Id": 7,
+          "spell2Id": 4,
+          "teamSummary": [
+            {
+              "championId": 122,
+              "roleId": 4,
+              "summonerName": "Morpheus94",
+              "teamId": 100
+            },
+            {
+              "championId": 24,
+              "roleId": 3,
+              "summonerName": "Penny Wiise",
+              "teamId": 100
+            },
+            {
+              "championId": 99,
+              "roleId": 2,
+              "summonerName": "BuzzLlama",
+              "teamId": 100
+            },
+            {
+              "championId": 22,
+              "roleId": 1,
+              "summonerName": "Desolarus",
+              "teamId": 100
+            },
+            {
+              "championId": 25,
+              "roleId": 0,
+              "summonerName": "DodurgaLee",
+              "teamId": 100
+            },
+            {
+              "championId": 68,
+              "roleId": 4,
+              "summonerName": "Largo Lloyd",
+              "teamId": 200
+            },
+            {
+              "championId": 120,
+              "roleId": 3,
+              "summonerName": "Limpslug",
+              "teamId": 200
+            },
+            {
+              "championId": 61,
+              "roleId": 2,
+              "summonerName": "Lucian 2",
+              "teamId": 200
+            },
+            {
+              "championId": 21,
+              "roleId": 1,
+              "summonerName": "DandurQa",
+              "teamId": 200
+            },
+            {
+              "championId": 497,
+              "roleId": 0,
+              "summonerName": "MGrate",
+              "teamId": 200
+            }
+          ],
+          "win": true
+        },
+        {
+          "assists": 11,
+          "build": [1402, 3100, 3152, 3020, 3165, 0, 3364],
+          "champLevel": 14,
+          "championId": 28,
+          "cs": 106,
+          "deaths": 11,
+          "gameCreation": "2019-09-13T17:11:36+03:00",
+          "gameDuration": 2199,
+          "kda": 2,
+          "killParticipation": 51,
+          "kills": 11,
+          "queueId": 440,
+          "roleId": 3,
+          "runes": {
+            "primaryPath": 8100,
+            "subPath": 8000
+          },
+          "spell1Id": 11,
+          "spell2Id": 4,
+          "teamSummary": [
+            {
+              "championId": 518,
+              "roleId": 4,
+              "summonerName": "Yoshiane",
+              "teamId": 100
+            },
+            {
+              "championId": 28,
+              "roleId": 3,
+              "summonerName": "Desolarus",
+              "teamId": 100
+            },
+            {
+              "championId": 10,
+              "roleId": 2,
+              "summonerName": "HF Yuno",
+              "teamId": 100
+            },
+            {
+              "championId": 81,
+              "roleId": 1,
+              "summonerName": "Tarky",
+              "teamId": 100
+            },
+            {
+              "championId": 53,
+              "roleId": 0,
+              "summonerName": "ardakyrozgr",
+              "teamId": 100
+            },
+            {
+              "championId": 246,
+              "roleId": 4,
+              "summonerName": "Fric",
+              "teamId": 200
+            },
+            {
+              "championId": 75,
+              "roleId": 3,
+              "summonerName": "LaRuSs",
+              "teamId": 200
+            },
+            {
+              "championId": 8,
+              "roleId": 2,
+              "summonerName": "ZjeIympth ",
+              "teamId": 200
+            },
+            {
+              "championId": 29,
+              "roleId": 1,
+              "summonerName": "SheHasBF GO NEXT",
+              "teamId": 200
+            },
+            {
+              "championId": 25,
+              "roleId": 0,
+              "summonerName": "ÊnesÂbi",
+              "teamId": 200
+            }
+          ],
+          "win": false
+        },
+        {
+          "assists": 10,
+          "build": [3031, 3085, 3133, 1037, 3006, 1018, 3340],
+          "champLevel": 14,
+          "championId": 22,
+          "cs": 178,
+          "deaths": 3,
+          "gameCreation": "2019-06-01T13:22:24+03:00",
+          "gameDuration": 1679,
+          "kda": 4.67,
+          "killParticipation": 47,
+          "kills": 4,
+          "queueId": 420,
+          "roleId": 1,
+          "runes": {
+            "primaryPath": 8000,
+            "subPath": 8300
+          },
+          "spell1Id": 7,
+          "spell2Id": 4,
+          "teamSummary": [
+            {
+              "championId": 122,
+              "roleId": 4,
+              "summonerName": "Morpheus94",
+              "teamId": 100
+            },
+            {
+              "championId": 24,
+              "roleId": 3,
+              "summonerName": "Penny Wiise",
+              "teamId": 100
+            },
+            {
+              "championId": 99,
+              "roleId": 2,
+              "summonerName": "BuzzLlama",
+              "teamId": 100
+            },
+            {
+              "championId": 22,
+              "roleId": 1,
+              "summonerName": "Desolarus",
+              "teamId": 100
+            },
+            {
+              "championId": 25,
+              "roleId": 0,
+              "summonerName": "DodurgaLee",
+              "teamId": 100
+            },
+            {
+              "championId": 68,
+              "roleId": 4,
+              "summonerName": "Largo Lloyd",
+              "teamId": 200
+            },
+            {
+              "championId": 120,
+              "roleId": 3,
+              "summonerName": "Limpslug",
+              "teamId": 200
+            },
+            {
+              "championId": 61,
+              "roleId": 2,
+              "summonerName": "Lucian 2",
+              "teamId": 200
+            },
+            {
+              "championId": 21,
+              "roleId": 1,
+              "summonerName": "DandurQa",
+              "teamId": 200
+            },
+            {
+              "championId": 497,
+              "roleId": 0,
+              "summonerName": "MGrate",
+              "teamId": 200
+            }
+          ],
+          "win": true
+        },
+        {
+          "assists": 11,
+          "build": [1402, 3100, 3152, 3020, 3165, 0, 3364],
+          "champLevel": 14,
+          "championId": 28,
+          "cs": 106,
+          "deaths": 11,
+          "gameCreation": "2019-09-13T17:11:36+03:00",
+          "gameDuration": 2199,
+          "kda": 2,
+          "killParticipation": 51,
+          "kills": 11,
+          "queueId": 440,
+          "roleId": 3,
+          "runes": {
+            "primaryPath": 8100,
+            "subPath": 8000
+          },
+          "spell1Id": 11,
+          "spell2Id": 4,
+          "teamSummary": [
+            {
+              "championId": 518,
+              "roleId": 4,
+              "summonerName": "Yoshiane",
+              "teamId": 100
+            },
+            {
+              "championId": 28,
+              "roleId": 3,
+              "summonerName": "Desolarus",
+              "teamId": 100
+            },
+            {
+              "championId": 10,
+              "roleId": 2,
+              "summonerName": "HF Yuno",
+              "teamId": 100
+            },
+            {
+              "championId": 81,
+              "roleId": 1,
+              "summonerName": "Tarky",
+              "teamId": 100
+            },
+            {
+              "championId": 53,
+              "roleId": 0,
+              "summonerName": "ardakyrozgr",
+              "teamId": 100
+            },
+            {
+              "championId": 246,
+              "roleId": 4,
+              "summonerName": "Fric",
+              "teamId": 200
+            },
+            {
+              "championId": 75,
+              "roleId": 3,
+              "summonerName": "LaRuSs",
+              "teamId": 200
+            },
+            {
+              "championId": 8,
+              "roleId": 2,
+              "summonerName": "ZjeIympth ",
+              "teamId": 200
+            },
+            {
+              "championId": 29,
+              "roleId": 1,
+              "summonerName": "SheHasBF GO NEXT",
+              "teamId": 200
+            },
+            {
+              "championId": 25,
+              "roleId": 0,
+              "summonerName": "ÊnesÂbi",
+              "teamId": 200
+            }
+          ],
+          "win": false
+        },
+        {
+          "assists": 10,
+          "build": [3031, 3085, 3133, 1037, 3006, 1018, 3340],
+          "champLevel": 14,
+          "championId": 22,
+          "cs": 178,
+          "deaths": 3,
+          "gameCreation": "2019-06-01T13:22:24+03:00",
+          "gameDuration": 1679,
+          "kda": 4.67,
+          "killParticipation": 47,
+          "kills": 4,
+          "queueId": 420,
+          "roleId": 1,
+          "runes": {
+            "primaryPath": 8000,
+            "subPath": 8300
+          },
+          "spell1Id": 7,
+          "spell2Id": 4,
+          "teamSummary": [
+            {
+              "championId": 122,
+              "roleId": 4,
+              "summonerName": "Morpheus94",
+              "teamId": 100
+            },
+            {
+              "championId": 24,
+              "roleId": 3,
+              "summonerName": "Penny Wiise",
+              "teamId": 100
+            },
+            {
+              "championId": 99,
+              "roleId": 2,
+              "summonerName": "BuzzLlama",
+              "teamId": 100
+            },
+            {
+              "championId": 22,
+              "roleId": 1,
+              "summonerName": "Desolarus",
+              "teamId": 100
+            },
+            {
+              "championId": 25,
+              "roleId": 0,
+              "summonerName": "DodurgaLee",
+              "teamId": 100
+            },
+            {
+              "championId": 68,
+              "roleId": 4,
+              "summonerName": "Largo Lloyd",
+              "teamId": 200
+            },
+            {
+              "championId": 120,
+              "roleId": 3,
+              "summonerName": "Limpslug",
+              "teamId": 200
+            },
+            {
+              "championId": 61,
+              "roleId": 2,
+              "summonerName": "Lucian 2",
+              "teamId": 200
+            },
+            {
+              "championId": 21,
+              "roleId": 1,
+              "summonerName": "DandurQa",
+              "teamId": 200
+            },
+            {
+              "championId": 497,
+              "roleId": 0,
+              "summonerName": "MGrate",
+              "teamId": 200
+            }
+          ],
+          "win": true
+        },
+        {
+          "assists": 11,
+          "build": [1402, 3100, 3152, 3020, 3165, 0, 3364],
+          "champLevel": 14,
+          "championId": 28,
+          "cs": 106,
+          "deaths": 11,
+          "gameCreation": "2019-09-13T17:11:36+03:00",
+          "gameDuration": 2199,
+          "kda": 2,
+          "killParticipation": 51,
+          "kills": 11,
+          "queueId": 440,
+          "roleId": 3,
+          "runes": {
+            "primaryPath": 8100,
+            "subPath": 8000
+          },
+          "spell1Id": 11,
+          "spell2Id": 4,
+          "teamSummary": [
+            {
+              "championId": 518,
+              "roleId": 4,
+              "summonerName": "Yoshiane",
+              "teamId": 100
+            },
+            {
+              "championId": 28,
+              "roleId": 3,
+              "summonerName": "Desolarus",
+              "teamId": 100
+            },
+            {
+              "championId": 10,
+              "roleId": 2,
+              "summonerName": "HF Yuno",
+              "teamId": 100
+            },
+            {
+              "championId": 81,
+              "roleId": 1,
+              "summonerName": "Tarky",
+              "teamId": 100
+            },
+            {
+              "championId": 53,
+              "roleId": 0,
+              "summonerName": "ardakyrozgr",
+              "teamId": 100
+            },
+            {
+              "championId": 246,
+              "roleId": 4,
+              "summonerName": "Fric",
+              "teamId": 200
+            },
+            {
+              "championId": 75,
+              "roleId": 3,
+              "summonerName": "LaRuSs",
+              "teamId": 200
+            },
+            {
+              "championId": 8,
+              "roleId": 2,
+              "summonerName": "ZjeIympth ",
+              "teamId": 200
+            },
+            {
+              "championId": 29,
+              "roleId": 1,
+              "summonerName": "SheHasBF GO NEXT",
+              "teamId": 200
+            },
+            {
+              "championId": 25,
+              "roleId": 0,
+              "summonerName": "ÊnesÂbi",
+              "teamId": 200
+            }
+          ],
+          "win": false
+        },
+        {
+          "assists": 10,
+          "build": [3031, 3085, 3133, 1037, 3006, 1018, 3340],
+          "champLevel": 14,
+          "championId": 22,
+          "cs": 178,
+          "deaths": 3,
+          "gameCreation": "2019-06-01T13:22:24+03:00",
+          "gameDuration": 1679,
+          "kda": 4.67,
+          "killParticipation": 47,
+          "kills": 4,
+          "queueId": 420,
+          "roleId": 1,
+          "runes": {
+            "primaryPath": 8000,
+            "subPath": 8300
+          },
+          "spell1Id": 7,
+          "spell2Id": 4,
+          "teamSummary": [
+            {
+              "championId": 122,
+              "roleId": 4,
+              "summonerName": "Morpheus94",
+              "teamId": 100
+            },
+            {
+              "championId": 24,
+              "roleId": 3,
+              "summonerName": "Penny Wiise",
+              "teamId": 100
+            },
+            {
+              "championId": 99,
+              "roleId": 2,
+              "summonerName": "BuzzLlama",
+              "teamId": 100
+            },
+            {
+              "championId": 22,
+              "roleId": 1,
+              "summonerName": "Desolarus",
+              "teamId": 100
+            },
+            {
+              "championId": 25,
+              "roleId": 0,
+              "summonerName": "DodurgaLee",
+              "teamId": 100
+            },
+            {
+              "championId": 68,
+              "roleId": 4,
+              "summonerName": "Largo Lloyd",
+              "teamId": 200
+            },
+            {
+              "championId": 120,
+              "roleId": 3,
+              "summonerName": "Limpslug",
+              "teamId": 200
+            },
+            {
+              "championId": 61,
+              "roleId": 2,
+              "summonerName": "Lucian 2",
+              "teamId": 200
+            },
+            {
+              "championId": 21,
+              "roleId": 1,
+              "summonerName": "DandurQa",
+              "teamId": 200
+            },
+            {
+              "championId": 497,
+              "roleId": 0,
+              "summonerName": "MGrate",
+              "teamId": 200
+            }
+          ],
+          "win": true
+        },
+        {
+          "assists": 11,
+          "build": [1402, 3100, 3152, 3020, 3165, 0, 3364],
+          "champLevel": 14,
+          "championId": 28,
+          "cs": 106,
+          "deaths": 11,
+          "gameCreation": "2019-09-13T17:11:36+03:00",
+          "gameDuration": 2199,
+          "kda": 2,
+          "killParticipation": 51,
+          "kills": 11,
+          "queueId": 440,
+          "roleId": 3,
+          "runes": {
+            "primaryPath": 8100,
+            "subPath": 8000
+          },
+          "spell1Id": 11,
+          "spell2Id": 4,
+          "teamSummary": [
+            {
+              "championId": 518,
+              "roleId": 4,
+              "summonerName": "Yoshiane",
+              "teamId": 100
+            },
+            {
+              "championId": 28,
+              "roleId": 3,
+              "summonerName": "Desolarus",
+              "teamId": 100
+            },
+            {
+              "championId": 10,
+              "roleId": 2,
+              "summonerName": "HF Yuno",
+              "teamId": 100
+            },
+            {
+              "championId": 81,
+              "roleId": 1,
+              "summonerName": "Tarky",
+              "teamId": 100
+            },
+            {
+              "championId": 53,
+              "roleId": 0,
+              "summonerName": "ardakyrozgr",
+              "teamId": 100
+            },
+            {
+              "championId": 246,
+              "roleId": 4,
+              "summonerName": "Fric",
+              "teamId": 200
+            },
+            {
+              "championId": 75,
+              "roleId": 3,
+              "summonerName": "LaRuSs",
+              "teamId": 200
+            },
+            {
+              "championId": 8,
+              "roleId": 2,
+              "summonerName": "ZjeIympth ",
+              "teamId": 200
+            },
+            {
+              "championId": 29,
+              "roleId": 1,
+              "summonerName": "SheHasBF GO NEXT",
+              "teamId": 200
+            },
+            {
+              "championId": 25,
+              "roleId": 0,
+              "summonerName": "ÊnesÂbi",
+              "teamId": 200
+            }
+          ],
+          "win": false
+        },
+        {
+          "assists": 10,
+          "build": [3031, 3085, 3133, 1037, 3006, 1018, 3340],
+          "champLevel": 14,
+          "championId": 22,
+          "cs": 178,
+          "deaths": 3,
+          "gameCreation": "2019-06-01T13:22:24+03:00",
+          "gameDuration": 1679,
+          "kda": 4.67,
+          "killParticipation": 47,
+          "kills": 4,
+          "queueId": 420,
+          "roleId": 1,
+          "runes": {
+            "primaryPath": 8000,
+            "subPath": 8300
+          },
+          "spell1Id": 7,
+          "spell2Id": 4,
+          "teamSummary": [
+            {
+              "championId": 122,
+              "roleId": 4,
+              "summonerName": "Morpheus94",
+              "teamId": 100
+            },
+            {
+              "championId": 24,
+              "roleId": 3,
+              "summonerName": "Penny Wiise",
+              "teamId": 100
+            },
+            {
+              "championId": 99,
+              "roleId": 2,
+              "summonerName": "BuzzLlama",
+              "teamId": 100
+            },
+            {
+              "championId": 22,
+              "roleId": 1,
+              "summonerName": "Desolarus",
+              "teamId": 100
+            },
+            {
+              "championId": 25,
+              "roleId": 0,
+              "summonerName": "DodurgaLee",
+              "teamId": 100
+            },
+            {
+              "championId": 68,
+              "roleId": 4,
+              "summonerName": "Largo Lloyd",
+              "teamId": 200
+            },
+            {
+              "championId": 120,
+              "roleId": 3,
+              "summonerName": "Limpslug",
+              "teamId": 200
+            },
+            {
+              "championId": 61,
+              "roleId": 2,
+              "summonerName": "Lucian 2",
+              "teamId": 200
+            },
+            {
+              "championId": 21,
+              "roleId": 1,
+              "summonerName": "DandurQa",
+              "teamId": 200
+            },
+            {
+              "championId": 497,
+              "roleId": 0,
+              "summonerName": "MGrate",
+              "teamId": 200
+            }
+          ],
+          "win": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,64 +1,30 @@
 import APIService from '@/apiservice/api.js';
+import mockdata from '@/mockdata/Challenge - Mockdata.json';
 import {
-  SET_USER_PROFILE,
+  SET_MATCH_HISTORY_DATA,
 } from "../mutation-types";
 
 const API = new APIService();
 
 const state = {
-  user: {}
+  matchHistoryData: {}
 };
 
 const getters = {
-  user: state => state.user,
+  matchHistoryData: state => state.matchHistoryData.matches[0],
+  latestMatchAnalysis: state => state.matchHistoryData.analysis[0],
 };
 
 const mutations = {
-  [SET_USER_PROFILE]: (state, payload) => {
-    state.user = payload;
+  [SET_MATCH_HISTORY_DATA]: (state, payload) => {
+    state.matchHistoryData = payload;
   },
 };
 
 const actions = {
-  save: async ({ commit }, payload) => {
-    let headers = { };
-    return API.post(`api/upload`, payload, headers).then(res => {
-      // commit(SET_USER_PROFILE, res.data);
-      return res.data;
-    }).catch(err => {
-      return err;
-    });
-  },
-
-  getCountries: async ({ commit }) => {
-    let headers = { };
-    return API.get(`api/getCountries`, headers).then(res => {
-      // commit(SET_USER_PROFILE, res.data);
-      return res;
-    }).catch(err => {
-      return err;
-    });
-  },
-
-  getStates: async ({ commit }, payload) => {
-    let headers = { };
-    return API.get(`api/getStates?countryId=${payload.countryId}`, headers).then(res => {
-      // commit(SET_USER_PROFILE, res.data);
-      return res;
-    }).catch(err => {
-      return err;
-    });
-  },
-
-  getCities: async ({ commit }, payload) => {
-    let headers = { };
-    return API.get(`api/getCities?countryId=${payload.countryId}&stateId=${payload.stateId}`, headers).then(res => {
-      // commit(SET_USER_PROFILE, res.data);
-      return res;
-    }).catch(err => {
-      return err;
-    });
-  },
+  getMatchHistory: ({commit}) => {
+    commit(SET_MATCH_HISTORY_DATA, mockdata);
+  }
 };
 
 export default {
