@@ -10,7 +10,6 @@
     </v-row>
     <v-row>
       <v-col cols="12" xs="12">
-        Test
         <StatusCard type="victory"/>
         <Avatar imageUrl="character1.png" type="rounded" :size="54" borderColor="blue" />
       </v-col>
