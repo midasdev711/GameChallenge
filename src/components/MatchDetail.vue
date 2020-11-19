@@ -1,10 +1,12 @@
 <template>
-  <div class="d-flex matchdetail-card pt-4 pl-4">
-  	<StatusCard type="victory" height="134" />
-    <div class="ml-6">
+  <div class="d-flex matchdetail-card pl-4">
+    <div class="pt-5">
+    	<StatusCard :type="status" height="134" />
+    </div>
+    <div class="ml-6 pt-5">
       <div class="title-block d-flex align-center pb-1 mb-2">
         <img :src="require(`../assets/images/top.png`)" width="14px" height="14px" />
-        <span class="font-size1 font-color1 font-weight-bold pl-1 ml-2">Cyber Schnitzel</span>
+        <span class="font-size1 font-color1 font-weight-bold pl-1 ml-2">{{ record.summonerName }}</span>
       </div>
       <div class="detail-block d-flex">
         <div class="magic-block d-flex pt-2 justify-space-between">
@@ -13,12 +15,12 @@
           <SpellGroup :spellUrls="spellUrls" />
         </div>
         <div class="statistic-block">
-          <p class="mb-0"><span class="font-size1 font-color1">Duration</span> <span class="font-size1 font-color1 font-weight-bold">34:12</span></p>
-          <p class="font-size2 font-color1">4 Hours Ago</p>
-          <p class="mb-0 font-size1 font-color2 font-weight-bold"><span class="font-green mr-1">14</span>/<span class="font-red ml-1 mr-1">5</span>/<span class="font-grey ml-1">6</span></p>
-          <p class="mb-0 font-color2 font-size2">4.20:1 KDA</p>
-          <p class="mb-0 font-color3 font-size1 font-weight-bold">160 CS</p>
-          <p class="mb-0 font-color2 font-size2">55% KP</p>
+          <p class="mb-0"><span class="font-size1 font-color1">Duration</span> <span class="font-size1 font-color1 font-weight-bold">{{ gameDuration }}</span></p>
+          <p class="font-size2 font-color1">{{ gameCreated }}</p>
+          <p class="mb-0 font-size1 font-color2 font-weight-bold"><span class="font-green mr-1">{{ record.kills }}</span>/<span class="font-red ml-1 mr-1">{{ record.deaths }}</span>/<span class="font-grey ml-1">{{ record.assists }}</span></p>
+          <p class="mb-0 font-color2 font-size2">{{ record.kda }} KDA</p>
+          <p class="mb-0 font-color3 font-size1 font-weight-bold">{{ record.cs }} CS</p>
+          <p class="mb-0 font-color2 font-size2">{{ record.killParticipation }}% KP</p>
         </div>
         <div class="team-block ml-3">
           <VersusCard :firstPlayer="firstPlayer" :secondPlayer="secondPlayer" :versusImage="versusImage" v-for="i in 5" :key="i" />
@@ -32,6 +34,8 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
+import moment from "moment";
 import StatusCard from "@/components/base/StatusCard";
 import SummonerGroup from "@/components/base/SummonerGroup";
 import SpellGroup from "@/components/base/SpellGroup";
@@ -80,6 +84,18 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('app', {
+      record: 'latestMatchAnalysis'
+    }),
+    gameCreated() {
+      return moment(this.record && this.record.gameCreation).fromNow();
+    },
+    gameDuration() {
+      return '' + Math.floor(this.record.gameDuration / 60) + ':' + this.record.gameDuration % 60;
+    },
+    status() {
+      return this.record && this.record.win ? 'victory' : 'defeat';
+    },
   }
 };
 </script>

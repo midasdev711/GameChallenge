@@ -7,12 +7,12 @@ import {
 const API = new APIService();
 
 const state = {
-  matchHistoryData: {}
+  matchHistoryData: null
 };
 
 const getters = {
-  matchHistoryData: state => state.matchHistoryData.matches[0],
-  latestMatchAnalysis: state => state.matchHistoryData.analysis[0],
+  matchHistoryData: state => state.matchHistoryData && state.matchHistoryData.matches && state.matchHistoryData.matches[0],
+  latestMatchAnalysis: state => state.matchHistoryData && state.matchHistoryData.analysis && state.matchHistoryData.analysis[0],
 };
 
 const mutations = {

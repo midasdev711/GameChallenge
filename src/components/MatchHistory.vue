@@ -6,8 +6,8 @@
       </div>
     </v-col>
     <v-col cols="12" class="pr-0 pl-4">
-      <div class="d-flex record-block">
-        <MatchRecord />
+      <div class="d-flex flex-wrap record-block">
+        <MatchRecord class="individual-match" :record="result" v-for="(result, index) in matchHistoryData.results" :key="'result' + index"/>
       </div>
     </v-col>
   </v-row>
@@ -59,4 +59,8 @@ export default {
 <style scoped lang="sass">
 .record-block
   width: 100%
+  max-height: 578px
+  overflow-y: auto
+  .individual-match + .individual-match
+    margin-top: 3px
 </style>

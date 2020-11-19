@@ -1,28 +1,28 @@
 <template>
-  <div class="d-flex match-record">
-    <StatusCard type="victory"/>
+  <div class="d-flex match-record" :style="cardStyle">
+    <StatusCard :type="status"/>
     <div class="match-title-block d-flex justify-center">
-      <span class="font-size2 font-color2 mb-0">4 Hours Ago</span>
+      <span class="font-size2 font-color2 mb-0">{{ gameCreated }}</span>
       <span class="mb-0 font-color3 font-size1 font-weight-bold">Ranked Solo</span>
-      <span class="mb-0 font-color2 font-size2">34:20 .</span>
+      <span class="mb-0 font-color2 font-size2">{{ gameDuration }} .</span>
     </div>
     <div class="magic-block d-flex">
       <Avatar imageUrl="character2.png" :size="54" type="rounded" borderColor="#1C1F33" />
       <SummonerGroup :summonerUrls="summonerUrls" />
     </div>
     <div class="match-record-detail">
-      <p class="mb-0 font-size1 font-grey font-weight-bold"><span class="mr-1">14</span>/<span class="ml-1 mr-1">5</span>/<span class="ml-1">6</span></p>
-      <p class="mb-0 font-color2 font-size2">4.20:1 KDA</p>
+      <p class="mb-0 font-size1 font-grey font-weight-bold"><span class="mr-1">{{ record.kills }}</span>/<span class="ml-1 mr-1">{{ record.deaths }}</span>/<span class="ml-1">{{ record.assists }}</span></p>
+      <p class="mb-0 font-color2 font-size2">{{ record.kda }} KDA</p>
     </div>
     <div class="match-record-detail2">
-      <p class="mb-2 font-grey font-size1 font-weight-bold">160 CS</p>
-      <p class="pt-2 mb-0 font-color2 font-size2">55% KP</p>
+      <p class="mb-2 font-grey font-size1 font-weight-bold">{{ record.cs }} CS</p>
+      <p class="pt-2 mb-0 font-color2 font-size2">{{ record.killParticipation }}% KP</p>
     </div>
     <div class="spell-group-detail d-flex align-center">
       <SpellGroup :spellUrls="spellUrls" />
     </div>
     <div class="d-flex align-center team-avatars">
-      <TeamVersusCard :players="players" />
+      <TeamVersusCard :players="record.teamSummary" />
     </div>
     <div class="d-flex align-center ml-auto mr-8">
       <DropdownButton />
@@ -37,6 +37,7 @@ import SpellGroup from "@/components/base/SpellGroup";
 import Avatar from "@/components/base/Avatar";
 import DropdownButton from "@/components/base/DropdownButton";
 import TeamVersusCard from "@/components/base/TeamVersusCard";
+import moment from "moment";
 
 export default {
   name: "MatchRecord",
@@ -49,6 +50,7 @@ export default {
     TeamVersusCard
   },
   props: {
+    record: Object
   },
   data: () => {
     return {
@@ -75,71 +77,28 @@ export default {
         summonerImage: 'character2.png'
       },
       versusImage: 'top.png',
-      players: [
-        {
-          "championId": 518,
-          "roleId": 4,
-          "summonerName": "Yoshiane",
-          "teamId": 100
-        },
-        {
-          "championId": 28,
-          "roleId": 3,
-          "summonerName": "Desolarus",
-          "teamId": 100
-        },
-        {
-          "championId": 10,
-          "roleId": 2,
-          "summonerName": "HF Yuno",
-          "teamId": 100
-        },
-        {
-          "championId": 81,
-          "roleId": 1,
-          "summonerName": "Tarky",
-          "teamId": 100
-        },
-        {
-          "championId": 53,
-          "roleId": 0,
-          "summonerName": "ardakyrozgr",
-          "teamId": 100
-        },
-        {
-          "championId": 246,
-          "roleId": 4,
-          "summonerName": "Fric",
-          "teamId": 200
-        },
-        {
-          "championId": 75,
-          "roleId": 3,
-          "summonerName": "LaRuSs",
-          "teamId": 200
-        },
-        {
-          "championId": 8,
-          "roleId": 2,
-          "summonerName": "ZjeIympth ",
-          "teamId": 200
-        },
-        {
-          "championId": 29,
-          "roleId": 1,
-          "summonerName": "SheHasBF GO NEXT",
-          "teamId": 200
-        },
-        {
-          "championId": 25,
-          "roleId": 0,
-          "summonerName": "ÊnesÂbi",
-          "teamId": 200
-        }
-      ]
     }
   },
   computed: {
+    gameCreated() {
+      return moment(this.record.gameCreation).fromNow();
+    },
+    gameDuration() {
+      return '' + Math.floor(this.record.gameDuration / 60) + ':' + this.record.gameDuration % 60;
+    },
+    status() {
+      return this.record.win ? 'victory' : 'defeat';
+    },
+    cardStyle() {
+      switch (this.status) {
+        case 'victory':
+          return `background: rgba(136, 217, 162, 0.1);`;
+        case 'defeat':
+          return `background: rgba(238, 99, 82, 0.1);`;
+        case 'remake':
+          return `background: rgba(182, 183, 198, 0.1);`;
+      }
+    }
   }
 };
 </script>
