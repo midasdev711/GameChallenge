@@ -1,6 +1,12 @@
 <template>
   <div class="d-flex justify-space-between align-center spell-group">
-    <img :src="require(`../../assets/images/${imageUrl}`)" width="20px" height="20px" v-for="(imageUrl, index) in spellUrls" :key="index"/>
+    <img
+      :src="require(`../../assets/images/${imageUrl}`)"
+      width="20px"
+      height="20px"
+      v-for="(imageUrl, index) in spellUrls"
+      :key="index"
+    />
   </div>
 </template>
 
@@ -8,7 +14,7 @@
 export default {
   name: "SpellGroup",
   props: {
-    spellUrls: Array
+    spellUrls: Array,
   },
 };
 </script>
@@ -20,6 +26,6 @@ export default {
   min-width: 67px
   height: 43px
   flex-direction: column
-  img + img 
+  img + img
     margin-left: 3px
 </style>

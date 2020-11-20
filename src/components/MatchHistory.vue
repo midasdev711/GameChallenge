@@ -3,11 +3,13 @@
     <v-col cols="12">
       <div class="d-flex filter-block pt-3 pl-4">
         <div class="tags">
-          <v-btn class="tag-button mr-1" v-for="(word, index) in filterKeywords" :key="index">
+          <v-btn
+            class="tag-button mr-1"
+            v-for="(word, index) in filterKeywords"
+            :key="index"
+          >
             {{ word }}
-            <v-icon class="ml-1">
-              mdi-close
-            </v-icon>
+            <v-icon class="ml-1"> mdi-close </v-icon>
           </v-btn>
         </div>
         <div class="ml-auto d-flex">
@@ -16,16 +18,15 @@
             <span>Filter</span>
           </v-btn>
           <div class="pagination">
-            <v-btn class="mr-3">
-              <v-icon dark>
-                mdi-chevron-left
-              </v-icon>
+            <v-btn class="mr-3" @click="prevPage" :disabled="currentPage == 1">
+              <v-icon dark> mdi-chevron-left </v-icon>
             </v-btn>
-            <span class="font-size2 font-color1"> {{ (currentPage - 1) * pageCount + 1 }} / {{ currentPage * pageCount}} of {{ totalCount }} </span>
-            <v-btn class="ml-3">
-              <v-icon dark>
-                mdi-chevron-right
-              </v-icon>
+            <span class="font-size2 font-color1">
+              {{ (currentPage - 1) * pageCount + 1 }} /
+              {{ currentPage * pageCount }} of {{ totalCount }}
+            </span>
+            <v-btn class="ml-3" @click="nextPage" :disabled="currentPage * pageCount >= totalCount">
+              <v-icon dark> mdi-chevron-right </v-icon>
             </v-btn>
           </div>
         </div>
@@ -33,7 +34,12 @@
     </v-col>
     <v-col cols="12" class="pr-0 pl-4 pt-0">
       <div class="d-flex flex-wrap record-block">
-        <MatchRecord class="individual-match" :record="result" v-for="(result, index) in matchHistoryData.results" :key="'result' + index"/>
+        <MatchRecord
+          class="individual-match"
+          :record="result"
+          v-for="(result, index) in records"
+          :key="'result' + index"
+        />
       </div>
     </v-col>
   </v-row>
@@ -46,18 +52,37 @@ import MatchRecord from "@/components/MatchRecord";
 export default {
   name: "MatchHistory",
   components: {
-    MatchRecord
+    MatchRecord,
   },
   data: () => {
     return {
       currentPage: 1,
       pageCount: 10,
-      totalCount: 250,
-      filterKeywords: ['All champions', 'All roles', 'Season 9']
-    }
+      filterKeywords: ["All champions", "All roles", "Season 9"],
+    };
   },
   computed: {
-    ...mapGetters('app', ['matchHistoryData'])
+    ...mapGetters("app", ["matchHistoryData"]),
+    totalCount() {
+      return this.matchHistoryData && this.matchHistoryData.results && this.matchHistoryData.results.length;
+    },
+    records() {
+      let startPos = (this.currentPage - 1) * this.pageCount;
+      let endPos = Math.max(this.currentPage * this.pageCount, this.totalCount);
+      return (this.matchHistoryData.results || []).slice(startPos, endPos);
+    }
+  },
+  methods: {
+    nextPage() {
+      if (this.currentPage * this.pageCount < this.totalCount) {
+        this.currentPage ++;
+      }
+    },
+    prevPage() {
+      if (this.currentPage > 1) {
+        this.currentPage --;
+      }
+    }
   }
 };
 </script>

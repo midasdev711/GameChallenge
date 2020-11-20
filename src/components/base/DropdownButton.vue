@@ -1,15 +1,10 @@
 <template>
   <div class="d-flex justify-center align-center dropdown-btn">
-  	<v-menu bottom>
+    <v-menu bottom>
       <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          class="bg-color1 trigger"
-          dark
-          v-bind="attrs"
-          v-on="on"
-        >
+        <v-btn class="bg-color1 trigger" dark v-bind="attrs" v-on="on">
           <span class="font-size1 text-white font-weight-bold mr-1">Select action</span>
-          <img src="@/assets/icons/chevron-down.svg">
+          <img src="@/assets/icons/chevron-down.svg" />
         </v-btn>
       </template>
       <v-list>
@@ -18,7 +13,14 @@
           :key="index"
           :class="'item' + index"
         >
-          <v-list-item-title>{{ item.title.toUpperCase() }}<img v-if="index == 0" class="up-img" src="@/assets/icons/chevron-up.svg"></v-list-item-title>
+          <v-list-item-title>
+            {{ item.title.toUpperCase() }}
+            <img
+              v-if="index == 0"
+              class="up-img"
+              src="@/assets/icons/chevron-up.svg"
+            />
+          </v-list-item-title>
         </v-list-item>
       </v-list>
     </v-menu>
@@ -28,21 +30,25 @@
 <script>
 export default {
   name: "DropdownButton",
-  props: {
-  },
+  props: {},
   data: () => {
     return {
-      items: [{
-        title: 'Summary'
-      },{
-        title: '2D replay'
-      },{
-        title: 'AI Analysis'
-      },{
-        title: 'Play like a pro'
-      }]
-    }
-  }
+      items: [
+        {
+          title: "Summary",
+        },
+        {
+          title: "2D replay",
+        },
+        {
+          title: "AI Analysis",
+        },
+        {
+          title: "Play like a pro",
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -75,5 +81,4 @@ export default {
         right: 0px
     &.item3, &.item2
       background: #002C9F
-
 </style>

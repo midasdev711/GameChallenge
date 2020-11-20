@@ -400,6 +400,174 @@
         },
         {
           "assists": 11,
+          "build": [3031, 3085, 3133, 1037, 3006, 1018, 3340],
+          "champLevel": 16,
+          "championId": 22,
+          "cs": 178,
+          "deaths": 13,
+          "gameCreation": "2019-06-08T13:22:24+03:00",
+          "gameDuration": 1679,
+          "kda": 4.67,
+          "killParticipation": 67,
+          "kills": 8,
+          "queueId": 420,
+          "roleId": 1,
+          "runes": {
+            "primaryPath": 8000,
+            "subPath": 8300
+          },
+          "spell1Id": 7,
+          "spell2Id": 4,
+          "teamSummary": [
+            {
+              "championId": 122,
+              "roleId": 4,
+              "summonerName": "Morpheus94",
+              "teamId": 100
+            },
+            {
+              "championId": 24,
+              "roleId": 3,
+              "summonerName": "Penny Wiise",
+              "teamId": 100
+            },
+            {
+              "championId": 99,
+              "roleId": 2,
+              "summonerName": "BuzzLlama",
+              "teamId": 100
+            },
+            {
+              "championId": 22,
+              "roleId": 1,
+              "summonerName": "Desolarus",
+              "teamId": 100
+            },
+            {
+              "championId": 25,
+              "roleId": 0,
+              "summonerName": "DodurgaLee",
+              "teamId": 100
+            },
+            {
+              "championId": 68,
+              "roleId": 4,
+              "summonerName": "Largo Lloyd",
+              "teamId": 200
+            },
+            {
+              "championId": 120,
+              "roleId": 3,
+              "summonerName": "Limpslug",
+              "teamId": 200
+            },
+            {
+              "championId": 61,
+              "roleId": 2,
+              "summonerName": "Lucian 2",
+              "teamId": 200
+            },
+            {
+              "championId": 21,
+              "roleId": 1,
+              "summonerName": "DandurQa",
+              "teamId": 200
+            },
+            {
+              "championId": 497,
+              "roleId": 0,
+              "summonerName": "MGrate",
+              "teamId": 200
+            }
+          ],
+          "win": true
+        },
+        {
+          "assists": 4,
+          "build": [3031, 3085, 3133, 1037, 3006, 1018, 3340],
+          "champLevel": 16,
+          "championId": 28,
+          "cs": 134,
+          "deaths": 38,
+          "gameCreation": "2020-11-01T13:22:24+03:00",
+          "gameDuration": 1679,
+          "kda": 4.67,
+          "killParticipation": 47,
+          "kills": 3,
+          "queueId": 420,
+          "roleId": 1,
+          "runes": {
+            "primaryPath": 8000,
+            "subPath": 8300
+          },
+          "spell1Id": 7,
+          "spell2Id": 4,
+          "teamSummary": [
+            {
+              "championId": 122,
+              "roleId": 4,
+              "summonerName": "Morpheus94",
+              "teamId": 100
+            },
+            {
+              "championId": 24,
+              "roleId": 3,
+              "summonerName": "Penny Wiise",
+              "teamId": 100
+            },
+            {
+              "championId": 99,
+              "roleId": 2,
+              "summonerName": "BuzzLlama",
+              "teamId": 100
+            },
+            {
+              "championId": 22,
+              "roleId": 1,
+              "summonerName": "Desolarus",
+              "teamId": 100
+            },
+            {
+              "championId": 25,
+              "roleId": 0,
+              "summonerName": "DodurgaLee",
+              "teamId": 100
+            },
+            {
+              "championId": 68,
+              "roleId": 4,
+              "summonerName": "Largo Lloyd",
+              "teamId": 200
+            },
+            {
+              "championId": 120,
+              "roleId": 3,
+              "summonerName": "Limpslug",
+              "teamId": 200
+            },
+            {
+              "championId": 61,
+              "roleId": 2,
+              "summonerName": "Lucian 2",
+              "teamId": 200
+            },
+            {
+              "championId": 21,
+              "roleId": 1,
+              "summonerName": "DandurQa",
+              "teamId": 200
+            },
+            {
+              "championId": 497,
+              "roleId": 0,
+              "summonerName": "MGrate",
+              "teamId": 200
+            }
+          ],
+          "win": true
+        },
+        {
+          "assists": 11,
           "build": [1402, 3100, 3152, 3020, 3165, 0, 3364],
           "champLevel": 14,
           "championId": 28,

@@ -1,6 +1,12 @@
 <template>
   <div class="d-flex justify-space-between align-center summoner-group">
-    <img :src="require(`../../assets/images/${imageUrl}`)" width="20px" height="20px" v-for="(imageUrl, index) in summonerUrls" :key="index"/>
+    <img
+      :src="require(`../../assets/images/${imageUrl}`)"
+      width="20px"
+      height="20px"
+      v-for="(imageUrl, index) in summonerUrls"
+      :key="index"
+    />
   </div>
 </template>
 
@@ -8,7 +14,7 @@
 export default {
   name: "SummonerGroup",
   props: {
-    summonerUrls: Array
+    summonerUrls: Array,
   },
 };
 </script>

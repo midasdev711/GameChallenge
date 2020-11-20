@@ -1,23 +1,40 @@
 <template>
-  <div class="d-flex justify-center align-center avatar-card" :style="cardStyle">
+  <div
+    class="d-flex justify-center avatar-card"
+  >
     <v-tooltip top v-if="tooltipText">
       <template v-slot:activator="{ on, attrs }">
-        <img :src="require(`../../assets/images/${imageUrl}`)" :width="`${size}px`" :height="`${size}px`" v-bind="attrs"
-          v-on="on" />
+        <img
+          :src="require(`../../assets/images/${imageUrl}`)"
+          :width="`${size}px`"
+          :height="`${size}px`"
+          :style="imageStyle"
+          v-bind="attrs"
+          v-on="on"
+        />
       </template>
       <span>{{ tooltipText }}</span>
     </v-tooltip>
-    <v-badge
-      color="black"
-      overlap
-      bottom
-      offset-x="10"
-      offset-y="10"
-      :content="badge"
-      v-else
-    >
-      <img :src="require(`../../assets/images/${imageUrl}`)" :width="`${size}px`" :height="`${size}px`" />
-    </v-badge>
+    <div v-else class="non-tooltip">
+      <img
+        :src="require(`../../assets/images/${imageUrl}`)"
+        :width="`${size}px`"
+        :height="`${size}px`"
+        :style="imageStyle"
+      />
+      <div class="badge d-flex justify-center align-center" v-if="badge">
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <span
+              v-bind="attrs"
+              v-on="on"
+              class="font-color2 font-size2 font-weight-bold"
+            >{{ badge }}</span>
+          </template>
+          <span class="font-color2 font-size2">Level {{ badge }}</span>
+        </v-tooltip>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -30,26 +47,26 @@ export default {
     type: String,
     borderColor: String,
     tooltipText: String,
-    badge: String
+    badge: Number
   },
   computed: {
-  	cardStyle() {
-  		let style
-  		switch (this.type) {
-  			case 'rounded':
-  				style = 'border-radius: 50%;'
-  				break
-  			default:
-          style = 'border-radius: 3px;'
-          break
-  		}
-  		style += `height: ${this.size}px`
-      if (this.borderColor) {
-        style += `border: 1px solid ${this.borderColor};`
+    imageStyle() {
+      let style;
+      switch (this.type) {
+        case "rounded":
+          style = "border-radius: 50%;";
+          break;
+        default:
+          style = "border-radius: 3px;";
+          break;
       }
-  		return style
-  	}
-  }
+      style += `height: ${this.size}px`;
+      if (this.borderColor) {
+        style += `border: 1px solid ${this.borderColor};`;
+      }
+      return style;
+    }
+  },
 };
 </script>
 
@@ -57,4 +74,14 @@ export default {
 .avatar-card
   overflow: hidden
   width: fit-content
+  .non-tooltip
+    position: relative
+    .badge
+      position: absolute
+      background: black
+      border-radius: 50%
+      left: calc(50% - 8px)!important
+      bottom: 0
+      width: 16px
+      height: 16px
 </style>

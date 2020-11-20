@@ -44,3 +44,12 @@
 .bg-color1 {
 	background: #002C9F!important;
 }
+
+.v-tooltip__content {
+	background: #00000D;
+	opacity: 0.9;
+	box-shadow: 0px 0px 30px rgba(0, 44, 159, 0.5);
+	border-radius: 0;
+	min-width: 120px;
+	text-align: center;
+}
