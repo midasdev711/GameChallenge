@@ -16,7 +16,7 @@
         </div>
         <div class="statistic-block">
           <p class="mb-0"><span class="font-size1 font-color1">Duration</span> <span class="font-size1 font-color1 font-weight-bold">{{ gameDuration }}</span></p>
-          <p class="font-size2 font-color1">{{ gameCreated }}</p>
+          <p class="font-size2 font-color1 text-capitalize">{{ gameCreated }}</p>
           <p class="mb-0 font-size1 font-color2 font-weight-bold"><span class="font-green mr-1">{{ record.kills }}</span>/<span class="font-red ml-1 mr-1">{{ record.deaths }}</span>/<span class="font-grey ml-1">{{ record.assists }}</span></p>
           <p class="mb-0 font-color2 font-size2">{{ record.kda }} KDA</p>
           <p class="mb-0 font-color3 font-size1 font-weight-bold">{{ record.cs }} CS</p>
