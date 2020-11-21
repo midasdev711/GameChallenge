@@ -86,8 +86,9 @@
             class="tag-button mr-1"
             v-for="(word, index) in filterKeywords"
             :key="index"
+            @click="removeFilter(word)"
           >
-            {{ word }}
+            {{ word.text }}
             <v-icon class="ml-1"> mdi-close </v-icon>
           </v-btn>
         </div>
@@ -145,7 +146,6 @@ export default {
     return {
       currentPage: 1,
       pageCount: 10,
-      filterKeywords: ["All champions", "All roles", "Season 9"],
       filterdialog: false,
       filter: originFilter,
       kdaItems: [],
@@ -196,6 +196,19 @@ export default {
     records() {
       let startPos = (this.currentPage - 1) * this.pageCount;
       return (this.filteredItem || []).slice(startPos, this.endPos);
+    },
+    filterKeywords() {
+      let items = [];
+      if (this.filter.victory) {
+        items.push({ text: 'Victory', value: true, type: 'victory' });
+      }
+      if (this.filter.defeat) {
+        items.push({ text: 'Defeat', value: true, type: 'defeat' });
+      }
+      if (this.filter.duration) {
+        items.push({ text: this.durationItems.filter(item => item.value == this.filter.duration).map(item => item.text)[0], value: true, type: 'duration' });
+      }
+      return items;
     }
   },
   methods: {
@@ -212,6 +225,9 @@ export default {
     clearFilter() {
       this.filter = Object.assign({}, originFilter);
       this.filterdialog = false;
+    },
+    removeFilter(item) {
+
     }
   }
 };
