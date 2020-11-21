@@ -1,7 +1,86 @@
 <template>
   <v-row class="pt-0">
+    <v-dialog
+      v-model="filterdialog"
+      persistent
+      dark
+      max-width="500px"
+    >
+      <v-card>
+        <v-card-text>
+          <v-container>
+            <v-row>
+              <v-col cols="6">
+                <v-checkbox
+                  v-model="filter.victory"
+                  :label="`Victory`"
+                  hide-details
+                ></v-checkbox>
+              </v-col>
+              <v-col cols="6">
+                <v-checkbox
+                  v-model="filter.defeat"
+                  :label="`Defeat`"
+                  hide-details
+                ></v-checkbox>
+              </v-col>
+              <v-col 
+                cols="12" 
+              >
+                <v-select
+                  v-model="filter.kda"
+                  :items="kdaItems"
+                  deletable-chips
+                  label="KDA"
+                  multiple
+                  clearable
+                ></v-select>
+              </v-col>
+              <v-col
+                cols="12"
+              >
+                <v-select
+                  v-model="filter.duration"
+                  :items="durationItems"
+                  label="Duration"
+                  clearable
+                ></v-select>
+              </v-col>
+              <v-col
+                cols="12"
+              >
+                <v-select
+                  v-model="filter.queue"
+                  :items="queueItems"
+                  deletable-chips
+                  multiple
+                  clearable
+                  label="Queue"
+                ></v-select>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="blue darken-1"
+            text
+            @click="clearFilter"
+          >
+            Clear
+          </v-btn>
+          <v-btn
+            color="blue darken-1"
+            @click="filterdialog = false"
+          >
+            Filter
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
     <v-col cols="12">
-      <div class="d-flex filter-block pt-3 pl-4">
+      <div class="d-flex filter-block pt-3 pl-1">
         <div class="tags">
           <v-btn
             class="tag-button mr-1"
@@ -13,7 +92,7 @@
           </v-btn>
         </div>
         <div class="ml-auto d-flex">
-          <v-btn text class="white--text font-size1 pl-1 pr-1 mr-2" small>
+          <v-btn text class="white--text font-size1 pl-1 pr-1 mr-2" small @click="filterdialog = true">
             <v-icon small>mdi-filter-outline</v-icon>
             <span>Filter</span>
           </v-btn>
@@ -23,7 +102,7 @@
             </v-btn>
             <span class="font-size2 font-color1">
               {{ (currentPage - 1) * pageCount + 1 }} /
-              {{ currentPage * pageCount }} of {{ totalCount }}
+              {{ endPos }} of {{ totalCount }}
             </span>
             <v-btn class="ml-3" @click="nextPage" :disabled="currentPage * pageCount >= totalCount">
               <v-icon dark> mdi-chevron-right </v-icon>
@@ -49,6 +128,14 @@
 import { mapActions, mapGetters } from "vuex";
 import MatchRecord from "@/components/MatchRecord";
 
+const originFilter = {
+  victory: true,
+  defeat: true,
+  kda: [],
+  duration: null,
+  queue: null
+}
+
 export default {
   name: "MatchHistory",
   components: {
@@ -59,17 +146,56 @@ export default {
       currentPage: 1,
       pageCount: 10,
       filterKeywords: ["All champions", "All roles", "Season 9"],
+      filterdialog: false,
+      filter: originFilter,
+      kdaItems: [],
+      durationItems: [{
+        text: '20-30', 
+        value: 1200
+      },{
+        text: '30-40', 
+        value: 1800
+      },{
+        text: '40-50', 
+        value: 2400
+      },{
+        text: '50-60', 
+        value: 3000
+      }],
+      queueItems: [{
+        text: 'Ranked solo',
+        value: 420
+      },{
+        text: 'Flex',
+        value: 440
+      },{
+        text: '3v3',
+        value: 430
+      }]
     };
   },
   computed: {
     ...mapGetters("app", ["matchHistoryData"]),
+    filteredItem() {
+      let items = (this.matchHistoryData && this.matchHistoryData.results) || [];
+      items = items.filter(item => (this.filter.victory && item.win) || (this.filter.defeat && !item.win))
+      if (this.filter.queue && this.filter.queue.length > 0) {
+        items = items.filter(item => this.filter.queue.indexOf(item.queueId) > -1)
+      }
+      if (this.filter.duration) {
+        items = items.filter(item => item.gameDuration >= this.filter.duration && item.gameDuration < this.filter.duration + 600)
+      }
+      return items;
+    },
     totalCount() {
-      return this.matchHistoryData && this.matchHistoryData.results && this.matchHistoryData.results.length;
+      return this.filteredItem.length;
+    },
+    endPos() {
+      return Math.min(this.currentPage * this.pageCount, this.totalCount);
     },
     records() {
       let startPos = (this.currentPage - 1) * this.pageCount;
-      let endPos = Math.max(this.currentPage * this.pageCount, this.totalCount);
-      return (this.matchHistoryData.results || []).slice(startPos, endPos);
+      return (this.filteredItem || []).slice(startPos, this.endPos);
     }
   },
   methods: {
@@ -82,6 +208,10 @@ export default {
       if (this.currentPage > 1) {
         this.currentPage --;
       }
+    },
+    clearFilter() {
+      this.filter = Object.assign({}, originFilter);
+      this.filterdialog = false;
     }
   }
 };

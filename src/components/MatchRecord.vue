@@ -3,7 +3,7 @@
     <StatusCard :type="status" />
     <div class="match-title-block d-flex justify-center">
       <span class="font-size2 font-color2 mb-0">{{ gameCreated }}</span>
-      <span class="mb-0 font-color3 font-size1 font-weight-bold">Ranked Solo</span>
+      <span class="mb-0 font-color3 font-size1 font-weight-bold">{{ queueItems[record.queueId] }}</span>
       <span class="mb-0 font-color2 font-size2">{{ gameDuration }} .</span>
     </div>
     <div class="magic-block d-flex">
@@ -91,6 +91,11 @@ export default {
         summonerImage: "character2.png",
       },
       versusImage: "top.png",
+      queueItems: {
+        420: 'Ranked solo',
+        440: 'Flex',
+        430: '3v3'
+      }
     };
   },
   computed: {
@@ -123,6 +128,7 @@ export default {
   .match-title-block
     flex-direction: column
     margin-left: 29px
+    min-width: 85px
   .magic-block
     margin-left: 75px
     align-items: center
