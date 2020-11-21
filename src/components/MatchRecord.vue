@@ -128,7 +128,7 @@ export default {
   .match-title-block
     flex-direction: column
     margin-left: 29px
-    min-width: 85px
+    min-width: 95px
   .magic-block
     margin-left: 75px
     align-items: center
