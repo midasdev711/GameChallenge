@@ -4,7 +4,7 @@
     <div class="match-title-block d-flex justify-center">
       <span class="font-size2 font-color2 mb-0">{{ gameCreated }}</span>
       <span class="mb-0 font-color3 font-size1 font-weight-bold">{{ queueItems[record.queueId] }}</span>
-      <span class="mb-0 font-color2 font-size2">{{ gameDuration }} .</span>
+      <span class="mb-0 font-color2 font-size2">{{ gameDuration }} ·</span>
     </div>
     <div class="magic-block d-flex">
       <Avatar

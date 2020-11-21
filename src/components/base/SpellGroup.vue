@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-space-between align-center spell-group">
+  <div class="d-flex justify-center align-center spell-group">
     <img
       :src="require(`../../assets/images/${imageUrl}`)"
       width="20px"
@@ -24,8 +24,8 @@ export default {
   flex-wrap: wrap
   width: fit-content
   min-width: 67px
-  height: 43px
+  height: 46px
   flex-direction: column
-  img + img
-    margin-left: 3px
+  img
+    margin: 1.5px
 </style>

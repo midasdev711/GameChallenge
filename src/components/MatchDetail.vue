@@ -20,16 +20,16 @@
         </div>
         <div class="statistic-block">
           <p class="mb-0">
-            <span class="font-size1 font-color1">Duration</span>
+            <span class="font-size1 font-color1">Duration: </span>
             <span class="font-size1 font-color1 font-weight-bold">{{ gameDuration }}</span>
           </p>
           <p class="font-size2 font-color1 text-capitalize">
             {{ gameCreated }}
           </p>
           <p class="mb-0 font-size1 font-color2 font-weight-bold">
-            <span class="font-green mr-1">{{ record.kills }}</span
-            >/<span class="font-red ml-1 mr-1">{{ record.deaths }}</span
-            >/<span class="font-grey ml-1">{{ record.assists }}</span>
+            <span :class="'mr-1 ' + detailStyle(record.kills)">{{ record.kills }}</span>/
+            <span :class="'ml-1 mr-1 ' + detailStyle(record.deaths)">{{ record.deaths }}</span>/
+            <span :class="'ml-1 ' + detailStyle(record.assists)">{{ record.assists }}</span>
           </p>
           <p class="mb-0 font-color2 font-size2">{{ record.kda }} KDA</p>
           <p class="mb-0 font-color3 font-size1 font-weight-bold">
@@ -119,6 +119,11 @@ export default {
       return this.record && this.record.win ? "victory" : "defeat";
     },
   },
+  methods: {
+    detailStyle(data) {
+      return data > 10 ? 'font-green' : (data > 5 ? 'font-grey' : 'font-red')
+    }
+  }
 };
 </script>
 

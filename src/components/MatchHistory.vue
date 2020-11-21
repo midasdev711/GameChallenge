@@ -2,7 +2,6 @@
   <v-row class="pt-0">
     <v-dialog
       v-model="filterdialog"
-      persistent
       dark
       max-width="500px"
     >
@@ -31,6 +30,7 @@
                   v-model="filter.kda"
                   :items="kdaItems"
                   deletable-chips
+                  chips
                   label="KDA"
                   multiple
                   clearable
@@ -53,6 +53,7 @@
                   v-model="filter.queue"
                   :items="queueItems"
                   deletable-chips
+                  chips
                   multiple
                   clearable
                   label="Queue"
@@ -65,17 +66,11 @@
           <v-spacer></v-spacer>
           <v-btn
             color="blue darken-1"
-            text
             @click="clearFilter"
           >
             Clear
           </v-btn>
-          <v-btn
-            color="blue darken-1"
-            @click="filterdialog = false"
-          >
-            Filter
-          </v-btn>
+          <v-spacer></v-spacer>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -114,12 +109,17 @@
     </v-col>
     <v-col cols="12" class="pr-0 pl-4 pt-0">
       <div class="d-flex flex-wrap record-block">
-        <MatchRecord
-          class="individual-match"
-          :record="result"
-          v-for="(result, index) in records"
-          :key="'result' + index"
-        />
+        <template v-if="records.length > 0">
+          <MatchRecord
+            class="individual-match"
+            :record="result"
+            v-for="(result, index) in records"
+            :key="'result' + index"
+          />
+        </template>
+        <div v-else class="no-record mr-4 d-flex align-center justify-center">
+          <h3 class="font-grey">No Data</h3>
+        </div>
       </div>
     </v-col>
   </v-row>
@@ -130,8 +130,8 @@ import { mapActions, mapGetters } from "vuex";
 import MatchRecord from "@/components/MatchRecord";
 
 const originFilter = {
-  victory: true,
-  defeat: true,
+  victory: false,
+  defeat: false,
   kda: [],
   duration: null,
   queue: null
@@ -148,18 +148,30 @@ export default {
       pageCount: 10,
       filterdialog: false,
       filter: originFilter,
-      kdaItems: [],
+      kdaItems: [{
+        text: '1 - 2',
+        value: 1,
+      },{
+        text: '2 - 3',
+        value: 2,
+      },{
+        text: '3 - 4',
+        value: 3,
+      },{
+        text: '4 - 5',
+        value: 4,
+      }],
       durationItems: [{
-        text: '20-30', 
+        text: '20 - 30', 
         value: 1200
       },{
-        text: '30-40', 
+        text: '30 - 40', 
         value: 1800
       },{
-        text: '40-50', 
+        text: '40 - 50', 
         value: 2400
       },{
-        text: '50-60', 
+        text: '50 - 60', 
         value: 3000
       }],
       queueItems: [{
@@ -178,12 +190,21 @@ export default {
     ...mapGetters("app", ["matchHistoryData"]),
     filteredItem() {
       let items = (this.matchHistoryData && this.matchHistoryData.results) || [];
-      items = items.filter(item => (this.filter.victory && item.win) || (this.filter.defeat && !item.win))
+      items = items.filter(item => (this.filter.victory && item.win) || (this.filter.defeat && !item.win) || (!this.filter.victory && !this.filter.defeat))
       if (this.filter.queue && this.filter.queue.length > 0) {
         items = items.filter(item => this.filter.queue.indexOf(item.queueId) > -1)
       }
       if (this.filter.duration) {
         items = items.filter(item => item.gameDuration >= this.filter.duration && item.gameDuration < this.filter.duration + 600)
+      }
+      if (this.filter.kda.length > 0) {
+        items = items.filter(item => {
+          for (let i = 0; i < this.filter.kda.length; i ++) {
+            if (item.kda >= this.filter.kda[i] && item.kda < this.filter.kda[i] + 1) {
+              return item;
+            }
+          }
+        })
       }
       return items;
     },
@@ -208,6 +229,28 @@ export default {
       if (this.filter.duration) {
         items.push({ text: this.durationItems.filter(item => item.value == this.filter.duration).map(item => item.text)[0], value: true, type: 'duration' });
       }
+      if (this.filter.queue && this.filter.queue.length > 0) {
+        let queueKeys = this.queueItems
+          .filter((item) => this.filter.queue.indexOf(item.value) > -1)
+          .map(item => {
+            return {
+              ...item,
+              type: 'queue'
+            }
+          });
+        items = [ ...items, ...queueKeys ];
+      }
+      if (this.filter.kda && this.filter.kda.length > 0) {
+        let queueKeys = this.kdaItems
+          .filter((item) => this.filter.kda.indexOf(item.value) > -1)
+          .map(item => {
+            return {
+              ...item,
+              type: 'kda'
+            }
+          });
+        items = [ ...items, ...queueKeys ];
+      }
       return items;
     }
   },
@@ -227,7 +270,20 @@ export default {
       this.filterdialog = false;
     },
     removeFilter(item) {
-
+      console.log(item)
+      if (item.type == 'victory') {
+        this.filter.victory = false;
+      } else if (item.type == 'defeat') {
+        this.filter.defeat = false;
+      } else if (item.type == 'duration') {
+        this.filter.duration = null;
+      } else if (item.type == 'queue') {
+        let index = this.filter.queue.indexOf(item.value);
+        this.filter.queue.splice(index, 1);
+      } else if (item.type == 'kda') {
+        let index = this.filter.kda.indexOf(item.value);
+        this.filter.kda.splice(index, 1);
+      }
     }
   }
 };
@@ -240,6 +296,10 @@ export default {
   overflow-y: auto
   .individual-match + .individual-match
     margin-top: 3px
+  .no-record
+    width: 100%
+    background: #00000D
+    min-height: 300px
 .pagination
   .v-btn.v-size--default
     padding: 0!important
